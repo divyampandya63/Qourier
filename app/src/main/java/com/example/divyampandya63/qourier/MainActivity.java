@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity
     private CardView create_shipment;
     private CardView manage_shipment;
     private CardView manage_address;
+    String webHotURL = "https://www.google.co.in/maps/@19.2383673,72.8574557,15z";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,15 +114,15 @@ public class MainActivity extends AppCompatActivity
                 startActivity(intent);
             }
         });
-        manage_shipment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,Manage_shipment.class);
-                startActivity(intent);
-            }
-        });
+       manage_shipment.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent detail = new Intent(getBaseContext(), Manage_shipment.class);
+               detail.putExtra("webURL", webHotURL);
+               startActivity(detail);
+           }
+       });
     }
-
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

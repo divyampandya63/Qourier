@@ -184,8 +184,11 @@
        android:layout_height="wrap_content"
        android:text="Save data"
        android:layout_marginTop="20dp"
-       android:textColor="#06cbed"
-       android:id="@+id/save_button_parcel"/>
+       android:textColor="#ffffff"
+       android:textSize="16sp"
+       android:background="@color/colorPrimary"
+       android:id="@+id/save_button_parcel"
+       android:textStyle="bold"/>
 
         <Button
             android:layout_width="wrap_content"
@@ -193,8 +196,11 @@
             android:text="Next"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="160dp"
-            android:textColor="#06cbed"
-            android:id="@+id/next_button_parcel"/>
+            android:id="@+id/next_button_parcel"
+            android:background="@color/colorPrimary"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:textSize="16sp"/>
 
     </LinearLayout>
 
