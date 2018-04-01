@@ -1,13 +1,18 @@
 package com.example.divyampandya63.qourier.Fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.divyampandya63.qourier.CourierList;
 import com.example.divyampandya63.qourier.R;
 
 /**
@@ -17,7 +22,11 @@ import com.example.divyampandya63.qourier.R;
  * to handle interaction events.
  */
 public class Courier extends Fragment {
-
+    private EditText from_pincode;
+    private EditText to_pincode;
+    private EditText weight;
+    private Button next;
+    private Button save;
 
     public Courier() {
         // Required empty public constructor
@@ -41,7 +50,26 @@ public class Courier extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_courier, container, false);
+        View view = inflater.inflate(R.layout.fragment_courier, container, false);
+        from_pincode = (view).findViewById(R.id.fpin);
+        to_pincode = (view).findViewById(R.id.tpin);
+        weight = (view).findViewById(R.id.kg);
+        save = (view).findViewById(R.id.save);
+        next = (view).findViewById(R.id.next);
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), CourierList.class);
+                startActivity(intent);
+            }
+        });
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(),"Data is saved",Toast.LENGTH_SHORT).show();
+            }
+        });
+        return view;
     }
 
 

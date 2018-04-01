@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.divyampandya63.qourier.CourierList;
 import com.example.divyampandya63.qourier.R;
@@ -73,6 +74,12 @@ public class Parcel extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), CourierList.class);
                 startActivity(intent);
+            }
+        });
+        save_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(),"Data is saved",Toast.LENGTH_SHORT).show();
             }
         });
         return view;

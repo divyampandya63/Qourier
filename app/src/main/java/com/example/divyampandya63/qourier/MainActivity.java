@@ -62,14 +62,7 @@ public class MainActivity extends AppCompatActivity
         mFirebaseAuth = FirebaseAuth.getInstance();
         mMessagesDatabaseReference=mFirebaseDatabase.getReference().child("Courier");
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -109,6 +102,21 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,Shipment_detail.class);
+                startActivity(intent);
+            }
+        });
+
+        manage_address.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,ManageActivity.class);
+                startActivity(intent);
+            }
+        });
+        manage_shipment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,Manage_shipment.class);
                 startActivity(intent);
             }
         });
@@ -218,10 +226,17 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
+            Intent intent = new Intent(MainActivity.this,Shipment_detail.class);
+            startActivity(intent);
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
 
+            Intent intent = new Intent(MainActivity.this,Manage_shipment.class);
+            startActivity(intent);
+
         } else if (id == R.id.nav_slideshow) {
+            Intent intent = new Intent(MainActivity.this,ManageActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_manage) {
 

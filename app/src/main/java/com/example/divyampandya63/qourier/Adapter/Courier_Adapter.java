@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.divyampandya63.qourier.Interface.ItemClickListener;
 import com.example.divyampandya63.qourier.Model.Courier_details;
+import com.example.divyampandya63.qourier.Paypal;
 import com.example.divyampandya63.qourier.R;
 import com.squareup.picasso.Picasso;
 
@@ -37,6 +38,8 @@ class Courier_View_Holder extends RecyclerView.ViewHolder implements View.OnClic
         rate =itemView.findViewById(R.id.rate);
         itemView.setOnClickListener(this);
     }
+
+
 
     public void setItemClickListener(ItemClickListener itemClickListener)
     {
@@ -72,6 +75,16 @@ public class Courier_Adapter extends RecyclerView.Adapter<Courier_View_Holder> {
         holder.time.setText(finals.get(position).getTime());
         Picasso.with(context).load(finals.get(position).getUrl()).into(holder.imageView);
         holder.rate.setText(finals.get(position).getRate());
+        holder.setItemClickListener(new ItemClickListener() {
+            @Override
+            public void onClick(View view, int position, boolean isLongClick) {
+                Intent i = new Intent(context, Paypal.class);
+                context.startActivity(i);
+
+
+
+            }
+        });
     }
     @Override
     public int getItemCount() {
