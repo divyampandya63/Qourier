@@ -1,13 +1,87 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.divyampandya63.qourier.Fragment.Courier">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+ <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:context="com.example.divyampandya63.qourier.Fragment.Courier">
 
-</FrameLayout>
+        <EditText
+            android:id="@+id/fpin"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="68dp"
+            android:ems="10"
+            android:hint="From Pincode"
+            android:inputType="number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/tpin"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="52dp"
+            android:ems="10"
+            android:hint="To Pincode"
+            android:inputType="number"
+            app:layout_constraintBottom_toTopOf="@+id/textView2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fpin"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:id="@+id/kg"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="260dp"
+            android:ems="10"
+            android:hint="Kgs"
+            android:inputType="number"
+            app:layout_constraintBottom_toTopOf="@+id/next"
+            app:layout_constraintStart_toEndOf="@+id/textView2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.029" />
+
+        <Button
+            android:id="@+id/next"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="224dp"
+            android:layout_marginTop="376dp"
+            android:text="Next"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="98dp"
+            android:layout_height="41dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="160dp"
+            android:text="TextView"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/save"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fpin"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Weight" />
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="376dp"
+            android:text="Save"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>

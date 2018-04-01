@@ -19,7 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Shipment_detail"></activity>
+        <activity android:name=".Shipment_detail" />
+        <activity android:name=".CourierList"></activity>
     </application>
 
 </manifest>

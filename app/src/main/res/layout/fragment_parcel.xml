@@ -7,14 +7,6 @@
     android:padding="16dp"
     tools:context="com.example.divyampandya63.qourier.Fragment.Parcel">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Package Description:"
-        android:textColor="#06cbed"
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"/>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -127,6 +119,54 @@
         <EditText
             android:id="@+id/edit_invoice_value"
             android:hint="In Rs"
+            android:inputType="number"
+            android:layout_weight="6"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:paddingTop="3dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="From"
+            android:layout_weight="4"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#06cbed"/>
+        <EditText
+            android:id="@+id/shipping_pincode"
+            android:hint="PINCODE"
+            android:inputType="number"
+            android:layout_weight="6"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:paddingTop="3dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="To"
+            android:layout_weight="4"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#06cbed"/>
+        <EditText
+            android:id="@+id/delivery_pincode"
+            android:hint="PINCODE"
             android:inputType="number"
             android:layout_weight="6"
             android:layout_height="wrap_content"

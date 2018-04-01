@@ -18,6 +18,7 @@ import com.example.divyampandya63.qourier.R;
  */
 public class Courier extends Fragment {
 
+
     public Courier() {
         // Required empty public constructor
     }

@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.divyampandya63.qourier.CourierList;
 import com.example.divyampandya63.qourier.R;
 
 /**
@@ -26,6 +27,8 @@ public class Parcel extends Fragment {
     private EditText weight;
     private EditText height;
     private EditText invoice_value;
+    private EditText shipping_pincode;
+    private EditText delivery_pincode;
     private Button save_button;
     private Button next_button;
 
@@ -60,13 +63,16 @@ public class Parcel extends Fragment {
         height =(view).findViewById(R.id.edit_height);
         weight = (view).findViewById(R.id.edit_weight);
         invoice_value = (view).findViewById(R.id.edit_invoice_value);
+        shipping_pincode = (view).findViewById(R.id.shipping_pincode);
+        delivery_pincode = (view).findViewById(R.id.delivery_pincode);
         save_button = (Button) (view).findViewById(R.id.save_button_parcel);
         next_button =(Button)(view).findViewById(R.id.next_button_parcel);
 
         next_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
+                Intent intent = new Intent(getActivity(), CourierList.class);
+                startActivity(intent);
             }
         });
         return view;
