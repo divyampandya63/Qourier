@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -41,6 +42,9 @@ public class MainActivity extends AppCompatActivity
     private FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private Courier_Adapter courier_adapter;
+    private CardView create_shipment;
+    private CardView manage_shipment;
+    private CardView manage_address;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +52,10 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        create_shipment = (CardView)findViewById(R.id.create_shipment);
+        manage_shipment = (CardView)findViewById(R.id.manage_shipment);
+        manage_address = (CardView)findViewById(R.id.manage_address);
 
 
         mFirebaseDatabase=FirebaseDatabase.getInstance();
@@ -69,7 +77,7 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        final NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
@@ -96,6 +104,14 @@ public class MainActivity extends AppCompatActivity
                 }
             }
         };
+
+        create_shipment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,Shipment_detail.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -156,7 +172,7 @@ public class MainActivity extends AppCompatActivity
             };
             mMessagesDatabaseReference.addChildEventListener(mChildEventListener);
         }
-    
+
 
 }
 
@@ -189,7 +205,7 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            AuthUI.getInstance().signOut(this);
         }
 
         return super.onOptionsItemSelected(item);
