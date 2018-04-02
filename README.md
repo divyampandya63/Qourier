@@ -6,10 +6,10 @@ Through our application, we can book courier services right from our house and t
 
 # Here's the video link to our project:-
 
-# https://drive.google.com/file/d/18wUW5jNAcUvptm_mcM3gX-EovtFYgVQO/view?usp=sharing
+https://drive.google.com/file/d/18wUW5jNAcUvptm_mcM3gX-EovtFYgVQO/view?usp=sharing
 
 # Also The apk link to our project is given below
 
-# https://drive.google.com/file/d/1P2GrEv5mwi-neZvUwhL80qV6vNKKWIRZ/view?usp=sharing
+https://drive.google.com/file/d/1P2GrEv5mwi-neZvUwhL80qV6vNKKWIRZ/view?usp=sharing
 
 Thank you.
